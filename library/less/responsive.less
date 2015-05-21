@@ -1,0 +1,81 @@
+@media (max-width: @screen-sm-max) {
+    #inner-header{
+        #logo{
+            width: 18.4em;
+        }
+    }
+}
+@media (min-width: @screen-sm-max) {
+    .alpha{
+        padding-left: 0px !important;
+    }
+    .omega{
+        padding-right: 0px !important;
+    }    
+}
+@media (max-width: @screen-xs-max) {
+    #back-to-top{
+        
+        a.btn{
+            padding-left: 0;
+        }
+    }
+    #inner-footer{
+        ul#menu-footer-navigation, ul#menu-utility-links{
+        float: none;
+        margin: 0;
+        margin-left: -5px;
+        padding: 0;
+        list-style-type: none;
+        text-align: right;
+        
+        li{
+            float: left;
+            a{
+                padding: .8em .5em;
+                font-size: 90%;
+            }
+        }
+        li.bull{
+            display:none;
+        }
+    }
+        #social{
+            padding-top: .5em;
+            margin-left: 0;
+            //margin-top: -4.4em;
+            text-align: left;
+            clear: both;
+            a{
+                padding: .8em .5em .8em 0em;
+                i{
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+    #inner-header{
+        #logo{
+            width: 33%;
+            .brand{
+                margin: .25em;
+            }
+        }
+        .nav-container{
+            min-height: 5em;
+        }
+        .camel-bg{
+            height: 2em;
+            h2{
+                display: none;
+            }
+        }
+    }
+}
+@media (max-width: 1600px) {
+    #myCarousel{
+        .left-fade, .right-fade {
+           display: none;
+         }
+    }
+}

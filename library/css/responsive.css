@@ -1,0 +1,8 @@
+@media (min-width: 768px) {
+  .alpha {
+    padding-left: 0px !important;
+  }
+  .omega {
+    padding-right: 0px !important;
+  }
+}

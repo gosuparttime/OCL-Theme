@@ -1,0 +1,228 @@
+//
+// Carousel
+// --------------------------------------------------
+
+
+// Wrapper for the slide container and indicators
+.carousel {
+  position: relative;
+}
+
+.carousel-inner {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+
+  > .item {
+    display: none;
+    position: relative;
+    .transition(.6s ease-in-out left);
+
+    // Account for jankitude on images
+    > img,
+    > a > img {
+      .img-responsive();
+      line-height: 1;
+    }
+  }
+
+  > .active,
+  > .next,
+  > .prev { display: block; }
+
+  > .active {
+    left: 0;
+  }
+
+  > .next,
+  > .prev {
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  > .next {
+    left: 100%;
+  }
+  > .prev {
+    left: -100%;
+  }
+  > .next.left,
+  > .prev.right {
+    left: 0;
+  }
+
+  > .active.left {
+    left: -100%;
+  }
+  > .active.right {
+    left: 100%;
+  }
+
+}
+
+// Left/right controls for nav
+// ---------------------------
+
+.carousel-control {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: @carousel-control-width;
+  .opacity(@carousel-control-opacity);
+  font-size: @carousel-control-font-size;
+  color: @carousel-control-color;
+  text-align: center;
+  text-shadow: @carousel-text-shadow;
+  .transition(.5s ease-in opacity);
+  // We can't have this transition here because webkit cancels the carousel
+  // animation if you trip this while in the middle of another animation.
+
+  // Set gradients for backgrounds
+  &.left {
+    #gradient > .horizontal(@start-color: fade(@blueLight, 33%); @end-color: fade(@blueLight, 0%));
+  }
+  &.right {
+    left: auto;
+    right: 0;
+    #gradient > .horizontal(@start-color: fade(@blueLight, 0%); @end-color: fade(@blueLight, 33%));
+  }
+
+  // Hover/focus state
+  &:hover,
+  &:focus {
+    color: @carousel-control-color;
+    text-decoration: none;
+    .opacity(.9);
+    .transition(.5s ease-in opacity);
+  }
+
+  // Toggles
+  .icon-prev,
+  .icon-next,
+  .glyphicon-chevron-left,
+  .glyphicon-chevron-right {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 5;
+    display: inline-block;
+  }
+  .icon-prev,
+  .icon-next {
+    width:  20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+    font-family: serif;
+  }
+
+  .icon-prev {
+    &:before {
+      content: '\2039';// SINGLE LEFT-POINTING ANGLE QUOTATION MARK (U+2039)
+    }
+  }
+  .icon-next {
+    &:before {
+      content: '\203a';// SINGLE RIGHT-POINTING ANGLE QUOTATION MARK (U+203A)
+    }
+  }
+}
+
+// Optional indicator pips
+//
+// Add an unordered list with the following class and add a list item for each
+// slide your carousel holds.
+.carousel-paginate{
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    z-index: 15;
+}
+.carousel-indicators {
+  width: auto;
+  padding-left: 0;
+  list-style: none;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  
+  li {
+    display: inline-block;
+    width:  1em;
+    height: 1em;
+    margin: 1px;
+    text-indent: -9999px;
+    border: 1px solid @carousel-indicator-border-color;
+    border-radius: .5em;
+    cursor: pointer;
+  }
+  .active {
+    margin: 1px;
+    width:  1em;
+    height: 1em;
+    background-color: @carousel-indicator-active-bg;
+  }
+}
+
+// Optional captions
+// -----------------------------
+// Hidden by default for smaller viewports
+.carousel-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  padding: 1em 9em 1em 1em;
+  color: @carousel-caption-color;
+  text-align: left;
+  background-color: fade(@cream, 75%);
+  font-weight: 700;
+  & .btn {
+    text-shadow: none; // No shadow for button elements in carousel-caption
+  }
+}
+
+
+// Scale up controls for tablets and up
+@media screen and (min-width: @screen-sm) {
+
+  // Scale up the controls a smidge
+  .carousel-control .icon-prev,
+  .carousel-control .icon-next {
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    margin-left: -15px;
+    font-size: 30px;
+  }
+
+  // Show and left align the captions
+  .carousel-caption {
+    left: 0;
+    right: 0;
+    padding-bottom: 1em;
+  }
+
+  // Move up the indicators
+  .carousel-indicators {
+    //bottom: 20px;
+  }
+}
+// Carousel Fade?
+.carousel {
+  .item {
+    .transition(.7s ease-in-out opacity);
+    left: 0 !important;
+  }
+  .next.left, .prev.right {
+    opacity: 1;
+    z-index: 1;
+  }
+  .active.left, .active.right {
+    opacity: 0;
+    z-index: 2;
+  }
+}

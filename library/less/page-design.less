@@ -1,0 +1,201 @@
+.camel-bg{
+    background: @camel;
+}
+.bluelight-bg{
+    background: @blueLight;
+}
+.cream-bg{
+    background: @cream;
+}
+.blue-bg{
+    background: @blue;
+}
+.bluedark-bg{
+    background: @blueDark;
+}
+#logo{
+    position: relative;
+        #branding{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        .brand{
+            margin: .33em .5em;
+        }
+    }
+}
+.navbar-search-btn{
+      color: @navbar-default-link-color;
+      font-size: @font-size-large;
+      font-weight: 700;
+      background: transparent;
+      border: none;
+      padding: .5em;
+      max-height: @navbar-height;
+      &:hover,
+      &:focus {
+        color: @blue;
+        background-color: @navbar-default-link-active-bg;
+      }
+}
+.navbar-search{
+      padding: .5em 0;
+}
+#inner-footer{
+    padding-top: 2em;
+    font-size: 87.5%;
+    a, p, li{
+        color: @white;
+    }
+    ul#menu-footer-navigation, ul#menu-utility-links{
+        float: right;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        text-align: right;
+        li{
+            float: left;
+            a{
+                padding: .25em .5em;
+            }
+        }
+       li.bull:last-child{
+           display: none;
+       }
+    }
+    #social{
+        padding-top: 2em;
+        text-align: right;
+        font-weight: 700;
+        i{
+            margin-right: .25em;
+            margin-top: .5em;
+            margin-bottom: -.5em;
+            display: inline;
+            &:hover{
+                text-decoration: none;
+            }
+        }
+        a{
+            > i:hover{
+                text-decoration: none;
+            }
+        }
+    }
+}
+#content{
+    padding-top: 3em;
+    padding-bottom: 2em;
+}
+.container-fluid{
+    max-width: 1600px;
+    margin: 0 auto 0;
+}
+#myCarousel{
+    //margin-top: -4em;
+    .left-fade {
+        width: 4em;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        #gradient > .horizontal(@start-color: fade(@blueLight, 100%); @end-color: fade(@blueLight, 0%));
+        position: absolute;
+        z-index: 9;
+    }
+    .right-fade {
+        width: 4em;
+        right: 0;
+         top: 0;
+        bottom: 0;
+        #gradient > .horizontal(@start-color: fade(@blueLight, 0%); @end-color: fade(@blueLight, 100%));
+        position: absolute;
+        z-index: 8;
+     }
+}
+.my-fade{
+    background-color: @camel;
+    background-color: fade(@camel, 80%);
+    z-index: 999;
+    position: relative;
+}
+#myQuote, #myComm{
+    color: @white;
+    position: relative;
+    .controls{
+        position: absolute;
+        bottom: .25em;
+        right: .5em;
+        z-index: 25;
+        .carousel-control{
+            font-size: @font-size-h4;
+            position: relative;
+            bottom: 0;
+            right: 0;
+        }
+        ol.carousel-indicators.sub-slider{
+            position: relative;
+            float: left;
+            padding-top: .33em;
+            li{
+                float: left;
+            }
+        }
+        .slide-left, .slide-right{
+            float: left;
+            margin: 0 .2em;
+            color: @white;
+            font-size: @font-size-h4;
+            &:hover, &:focus, &.focused{
+                text-decoration: none;
+            }
+        }
+    }
+}
+.radio-vertical{
+    span.wpcf7-list-item{
+        display: block;
+    }
+}
+.divider{
+    height: 2px;
+    width: auto;
+}
+.study-archive-item{
+    padding-bottom: 1em;
+}
+.link-block{
+    display: block;
+}
+.no-rule{
+    border: none;
+}
+.widget-pad{
+    padding-bottom: 1em;
+}
+.widget_archive, .widget_categories{
+    select{
+        .form-control();
+    }
+    ul{
+        .list-unstyled();
+        >li{
+            font-size: @font-size-large;
+        }
+    }
+}
+p.tags{
+    padding-top: 1em;
+    a.label{
+        color: @blue;
+        &:hover,&:focus{
+            color:@blueDark;
+            text-decoration: underline;
+        }
+    }
+}
+#back-to-top{
+    .btn{
+        color: @white;
+    }
+}

@@ -1,0 +1,63 @@
+/*
+Theme Name: Onondaga Citizens League
+Theme URI: http://onondagacitizensleague.org
+Github Theme URI: https://github.com/unwrittendevin/Onondaga-Citizens-League
+Description: A custom responsive theme based on the Bootstrap framework made for the Onondaga Citizen's League. Includes multiple page templates, two different sidebars and a theme options panel.
+Version: 1.0
+Author: Devin Kerr
+Author URI: http://dkerrcreative.com
+Tags: black, white, one-column, two-columns, flexible-width, custom-background, custom-colors, custom-menu, full-width-template, theme-options
+License: GNU General Public License v2.0 & Apache License 2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html http://www.apache.org/licenses/LICENSE-2.0
+*/
+
+/* micro clearfix: http://nicolasgallagher.com/micro-clearfix-hack/ */
+/* For modern browsers */
+.clearfix:before,
+.clearfix:after {
+    content:"";
+    display:table;
+}
+
+.clearfix:after {
+    clear:both;
+}
+
+/* For IE 6/7 (trigger hasLayout) */
+.clearfix {
+    zoom:1;
+}
+
+/* wp-specific classes */
+.wp-caption{
+	
+}
+
+.wp-caption-text{
+	
+}
+
+.sticky{
+	
+}
+
+.gallery-caption{
+	
+}
+
+/* layout */
+
+img.alignleft{
+	margin-right: 10px;
+	float: left;
+}
+
+img.alignright{
+	margin-left: 10px;
+	float: right;
+}
+
+img.aligncenter{
+	display: block;
+	margin: 0 auto;
+}
